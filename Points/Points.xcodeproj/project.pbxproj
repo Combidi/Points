@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A64847E02439EC6300DE0CB3 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A64847D72439EC6300DE0CB3 /* Core.framework */; };
-		A64847E52439EC6300DE0CB3 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64847E42439EC6300DE0CB3 /* CoreTests.swift */; };
+		A64847E52439EC6300DE0CB3 /* StoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64847E42439EC6300DE0CB3 /* StoreTest.swift */; };
+		A64847F12439EF7900DE0CB3 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64847F02439EF7900DE0CB3 /* Store.swift */; };
 		A69DCD3D2439E94200556E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DCD3C2439E94200556E59 /* AppDelegate.swift */; };
 		A69DCD3F2439E94200556E59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DCD3E2439E94200556E59 /* SceneDelegate.swift */; };
 		A69DCD412439E94200556E59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DCD402439E94200556E59 /* ContentView.swift */; };
@@ -47,8 +48,9 @@
 		A64847D72439EC6300DE0CB3 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64847DA2439EC6300DE0CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A64847DF2439EC6300DE0CB3 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A64847E42439EC6300DE0CB3 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		A64847E42439EC6300DE0CB3 /* StoreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTest.swift; sourceTree = "<group>"; };
 		A64847E62439EC6300DE0CB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A64847F02439EF7900DE0CB3 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		A69DCD392439E94200556E59 /* Points.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Points.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69DCD3C2439E94200556E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A69DCD3E2439E94200556E59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				A64847DA2439EC6300DE0CB3 /* Info.plist */,
+				A64847F02439EF7900DE0CB3 /* Store.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -116,7 +119,7 @@
 		A64847E32439EC6300DE0CB3 /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				A64847E42439EC6300DE0CB3 /* CoreTests.swift */,
+				A64847E42439EC6300DE0CB3 /* StoreTest.swift */,
 				A64847E62439EC6300DE0CB3 /* Info.plist */,
 			);
 			path = CoreTests;
@@ -386,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A64847F12439EF7900DE0CB3 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,7 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A64847E52439EC6300DE0CB3 /* CoreTests.swift in Sources */,
+				A64847E52439EC6300DE0CB3 /* StoreTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,6 +523,7 @@
 		A64847EA2439EC6300DE0CB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D83H87UGV3;
@@ -539,6 +544,7 @@
 		A64847EB2439EC6300DE0CB3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D83H87UGV3;
