@@ -16,7 +16,7 @@ class StoreTests: XCTestCase {
         XCTAssert(actionHandler.capturedAction === action)
     }
     
-    func test_dispatch_sendsRightStateToActionHandler()  {
+    func test_dispatch_passesRightStateToActionHandler()  {
         let state = StateStub()
         let actionHandler = TestActionHandler()
         let sut = makeSUT(state: state, actionHandler: actionHandler)

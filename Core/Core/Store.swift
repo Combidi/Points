@@ -5,7 +5,7 @@
 
 public protocol ActionHandler {
     associatedtype StateType
-    func handle(_ action: Action, getState: () -> StateType, setState: (StateType) -> Void, dispatch: (Action) -> Void)
+    func handle(_ action: Action, getState: () -> StateType, setState: @escaping (StateType) -> Void, dispatch: @escaping (Action) -> Void)
 }
 
 public class Store<StateType, ActionHandlerType: ActionHandler> where ActionHandlerType.StateType == StateType {
@@ -20,7 +20,7 @@ public class Store<StateType, ActionHandlerType: ActionHandler> where ActionHand
     }
 
     public func dispatch(_ action: Action) {
-        actionHandler.handle(action, getState: { state }, setState: { state = $0 }, dispatch: dispatch)
+        actionHandler.handle(action, getState: { state }, setState: { self.state = $0 }, dispatch: dispatch)
     }
 }
 

@@ -8,26 +8,84 @@ import XCTest
 
 class ComposableAppActionHandlerTest: XCTestCase {
  
-    func test_passesRightActionToAppActionHandlers() {
-        let handlers = [AppActionHandlerSpy(), AppActionHandlerSpy()]
-        let sut = ComposableAppActionHandler(handlers: handlers)
+    private var handlers: [AppActionHandlerSpy]!
+    private var sut: ComposableAppActionHandler!
+    
+    override func setUp() {
+        handlers = [AppActionHandlerSpy(), AppActionHandlerSpy()]
+        sut = ComposableAppActionHandler(handlers: handlers)
+    }
+    
+    func test_handleAction_passesRightActionToAppActionHandlers() {
         let action = ActionStub()
-        sut.handle(action, getState: { AppState() }, setState: {_ in}, dispatch: {_ in})
+        handle(action)
         handlers.forEach {
             XCTAssert($0.capturedAction === action)
         }
     }
+    
+    func test_handleAction_passesRightStateToActionHandlers() {
+        let expectedState = AppState()
+        handle(getState: { expectedState })
+        handlers.forEach {
+            XCTAssert($0.capturedState === expectedState)
+        }
+    }
+    
+    func test_handleAction_passesSetStateToActionHandlers() {
+        var capturedState: AppState?
+        let expectedState = AppState()
+        handle(setState: { capturedState = $0 })
+        handlers.forEach {
+            $0.set(state: expectedState)
+            XCTAssertTrue(capturedState === expectedState)
+        }
+    }
+    
+    func test_handleAction_canDispatchActions() {
+        var capturedAction: ActionStub?
+        let expectedAction = ActionStub()
+        handle(dispatch: { capturedAction = $0 as? ActionStub })
+        handlers.forEach {
+            $0.dispatch(action: expectedAction)
+            XCTAssertTrue(capturedAction === expectedAction)
+        }
+    }
+    
+    // MARK: - Helpers
+    private func handle(
+        _ action: Action = ActionStub(),
+        getState: () -> AppState = { AppState() },
+        setState: @escaping (AppState) -> Void = {_ in},
+        dispatch: @escaping (Action) -> Void = {_ in}
+    ) {
+        sut.handle(action, getState: getState, setState: setState, dispatch: dispatch)
+    }
 }
 
-private class ActionStub: Action {
-    
-}
+private class ActionStub: Action {}
 
 private class AppActionHandlerSpy: AppActionHandler {
     
     var capturedAction: ActionStub?
+    var capturedState: AppState?
     
-    func handle(_ action: Action, getState: () -> AppState, setState: (AppState) -> Void, dispatch: (Action) -> Void) {
+    private var capturedSetState: ((AppState) -> Void)?
+    
+    func set(state: AppState) {
+        capturedSetState?(state)
+    }
+    
+    private var capturedDispatch: ((Action) -> Void)?
+    
+    func dispatch(action: ActionStub) {
+        capturedDispatch?(action)
+    }
+    
+    func handle(_ action: Action, getState: () -> AppState, setState: @escaping (AppState) -> Void, dispatch: @escaping (Action) -> Void) {
         capturedAction = action as? ActionStub
+        capturedState = getState()
+        capturedSetState = setState
+        capturedDispatch = dispatch
     }
 }

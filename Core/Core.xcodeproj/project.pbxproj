@@ -83,13 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A6945254243A244E0016EF94 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		A6D2143C243A209900C4371D = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				A6D2144A243A209900C4371D /* Info.plist */,
-				A6945254243A244E0016EF94 /* Models */,
 				A60AF800243A20CD00FD6E18 /* Store.swift */,
 				A6945258243A24A60016EF94 /* ComposableAppActionHandler.swift */,
 			);
@@ -124,8 +116,8 @@
 		A6D21453243A209900C4371D /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6D21454243A209900C4371D /* StoreTests.swift */,
 				A6D21456243A209900C4371D /* Info.plist */,
+				A6D21454243A209900C4371D /* StoreTests.swift */,
 				A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */,
 			);
 			path = CoreTests;
