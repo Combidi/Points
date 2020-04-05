@@ -4,17 +4,17 @@
 //
 
 public protocol ActionHandler {
-    associatedtype State
-    func handle(_ action: Action, getState: () -> State, setState: (State) -> Void, dispatch: (Action) -> Void)
+    associatedtype StateType
+    func handle(_ action: Action, getState: () -> StateType, setState: (StateType) -> Void, dispatch: (Action) -> Void)
 }
 
-public class Store<Handler: ActionHandler> {
+public class Store<StateType, ActionHandlerType: ActionHandler> where ActionHandlerType.StateType == StateType {
     
-    private(set) var state: Handler.State
+    private(set) var state: StateType
     
-    let actionHandler: Handler
+    let actionHandler: ActionHandlerType
     
-    public init(state: Handler.State, actionHandler: Handler) {
+    public init(state: StateType, actionHandler: ActionHandlerType) {
         self.state = state
         self.actionHandler = actionHandler
     }

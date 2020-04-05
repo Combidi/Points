@@ -24,7 +24,7 @@ class StoreTests: XCTestCase {
         XCTAssert(state == actionHandler.capturedState)
     }
     
-    func test_dispatch_actionHandlersCanModifyState() {
+    func test_dispatch_actionHandlerCanModifyState() {
         let expected = StateStub(value: 19)
         let actionHandler = TestActionHandler(stateStub: expected, actionToDispatch: nil)
         let sut = makeSUT(state: StateStub(), actionHandler: actionHandler)
@@ -32,7 +32,7 @@ class StoreTests: XCTestCase {
         XCTAssert(sut.state == expected)
     }
     
-    func test_dispatch_actionHandlersCanDispatchNewActions() {
+    func test_dispatch_actionHandlerCanDispatchNewActions() {
         let secondAction = ActionStub()
         let actionHandler = TestActionHandler(stateStub: .init(), actionToDispatch: secondAction)
         let sut = makeSUT(actionHandler: actionHandler)
@@ -47,7 +47,7 @@ class StoreTests: XCTestCase {
     }
     
     // MARK: - Helpers
-    private func makeSUT(state: StateStub = StateStub(), actionHandler: TestActionHandler = TestActionHandler()) -> Store<TestActionHandler> {
+    private func makeSUT(state: StateStub = StateStub(), actionHandler: TestActionHandler = TestActionHandler()) -> Store<StateStub, TestActionHandler> {
         return Store(state: state, actionHandler: actionHandler)
     }
 }

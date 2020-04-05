@@ -11,6 +11,10 @@
 		A694523F243A22640016EF94 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6945236243A22640016EF94 /* Core.framework */; };
 		A694524D243A22D50016EF94 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D21454243A209900C4371D /* StoreTests.swift */; };
 		A694524E243A22F00016EF94 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60AF800243A20CD00FD6E18 /* Store.swift */; };
+		A6945256243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */; };
+		A6945257243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */; };
+		A6945259243A24A60016EF94 /* ComposableAppActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945258243A24A60016EF94 /* ComposableAppActionHandler.swift */; };
+		A694525A243A24A90016EF94 /* ComposableAppActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6945258243A24A60016EF94 /* ComposableAppActionHandler.swift */; };
 		A6D21450243A209900C4371D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D21446243A209900C4371D /* Core.framework */; };
 		A6D21455243A209900C4371D /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D21454243A209900C4371D /* StoreTests.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +40,8 @@
 		A60AF800243A20CD00FD6E18 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		A6945236243A22640016EF94 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A694523E243A22640016EF94 /* Core_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Core_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableAppActionHandlerTest.swift; sourceTree = "<group>"; };
+		A6945258243A24A60016EF94 /* ComposableAppActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableAppActionHandler.swift; sourceTree = "<group>"; };
 		A6D21446243A209900C4371D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D2144A243A209900C4371D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6D2144F243A209900C4371D /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +83,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6945254243A244E0016EF94 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A6D2143C243A209900C4371D = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +114,9 @@
 			isa = PBXGroup;
 			children = (
 				A6D2144A243A209900C4371D /* Info.plist */,
+				A6945254243A244E0016EF94 /* Models */,
 				A60AF800243A20CD00FD6E18 /* Store.swift */,
+				A6945258243A24A60016EF94 /* ComposableAppActionHandler.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -111,6 +126,7 @@
 			children = (
 				A6D21454243A209900C4371D /* StoreTests.swift */,
 				A6D21456243A209900C4371D /* Info.plist */,
+				A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -289,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A694525A243A24A90016EF94 /* ComposableAppActionHandler.swift in Sources */,
 				A694524E243A22F00016EF94 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6945257243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */,
 				A694524D243A22D50016EF94 /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6945259243A24A60016EF94 /* ComposableAppActionHandler.swift in Sources */,
 				A60AF801243A20CD00FD6E18 /* Store.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6945256243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */,
 				A6D21455243A209900C4371D /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
