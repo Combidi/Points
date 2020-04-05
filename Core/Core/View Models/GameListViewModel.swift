@@ -3,18 +3,7 @@
 //  Copyright © 2020 Combidi. All rights reserved.
 //
 
-import Foundation
-
-public struct Game: Equatable, Identifiable {
-    
-    public let id = UUID()
-    
-    public init() {}
-}
-
 import Combine
-
-public typealias AppStore = Store<AppState, ComposableAppActionHandler>
 
 public class GameListViewModel {
     
