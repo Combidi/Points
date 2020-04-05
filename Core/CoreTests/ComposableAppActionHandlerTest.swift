@@ -25,20 +25,20 @@ class ComposableAppActionHandlerTest: XCTestCase {
     }
     
     func test_handleAction_passesRightStateToActionHandlers() {
-        let expectedState = AppState()
+        let expectedState = makeAppState()
         handle(getState: { expectedState })
         handlers.forEach {
-            XCTAssert($0.capturedState === expectedState)
+            XCTAssertEqual($0.capturedState, expectedState)
         }
     }
     
     func test_handleAction_passesSetStateToActionHandlers() {
         var capturedState: AppState?
-        let expectedState = AppState()
+        let expectedState = makeAppState()
         handle(setState: { capturedState = $0 })
         handlers.forEach {
             $0.set(state: expectedState)
-            XCTAssertTrue(capturedState === expectedState)
+            XCTAssertEqual(capturedState, expectedState)
         }
     }
     
@@ -55,7 +55,7 @@ class ComposableAppActionHandlerTest: XCTestCase {
     // MARK: - Helpers
     private func handle(
         _ action: Action = ActionStub(),
-        getState: () -> AppState = { AppState() },
+        getState: () -> AppState = { makeAppState() },
         setState: @escaping (AppState) -> Void = {_ in},
         dispatch: @escaping (Action) -> Void = {_ in}
     ) {

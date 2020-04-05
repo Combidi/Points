@@ -3,17 +3,19 @@
 //  Copyright © 2020 Combidi. All rights reserved.
 //
 
-class AppState {}
+public struct AppState: Equatable {
+    var games: [Game] = []
+}
 
 protocol AppActionHandler {
     func handle(_ action: Action, getState: () -> AppState, setState: @escaping (AppState) -> Void, dispatch: @escaping (Action) -> Void)
 }
 
-struct ComposableAppActionHandler: ActionHandler {
+public struct ComposableAppActionHandler: ActionHandler {
     
     let handlers: [AppActionHandler]
     
-    func handle(_ action: Action, getState: () -> AppState, setState: @escaping (AppState) -> Void, dispatch: @escaping (Action) -> Void) {
+    public func handle(_ action: Action, getState: () -> AppState, setState: @escaping (AppState) -> Void, dispatch: @escaping (Action) -> Void) {
         handlers.forEach {
             $0.handle(action, getState: getState, setState: setState, dispatch: dispatch)
         }

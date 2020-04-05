@@ -46,6 +46,13 @@ class StoreTests: XCTestCase {
         }
     }
     
+    func test_setState() {
+        let expectedState = StateStub(value: 3)
+        let sut = makeSUT()
+        sut.set(state: expectedState)
+        XCTAssertEqual(expectedState, sut.state)
+    }
+    
     // MARK: - Helpers
     private func makeSUT(state: StateStub = StateStub(), actionHandler: TestActionHandler = TestActionHandler()) -> Store<StateStub, TestActionHandler> {
         return Store(state: state, actionHandler: actionHandler)
