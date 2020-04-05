@@ -10,7 +10,7 @@ class StoreTests: XCTestCase {
 
     func test_dispatch_passesActionActionHandler() {
         let actionHandler = TestActionHandler()
-        let sut = Store(state: StateStub(), actionHandler: actionHandler)
+        let sut = makeSUT(actionHandler: actionHandler)
         let action = ActionStub()
         sut.dispatch(action)
         XCTAssert(actionHandler.capturedAction === action)
@@ -19,7 +19,7 @@ class StoreTests: XCTestCase {
     func test_dispatch_sendsRightStateToActionHandler()  {
         let state = StateStub()
         let actionHandler = TestActionHandler()
-        let sut = Store(state: state, actionHandler: actionHandler)
+        let sut = makeSUT(state: state, actionHandler: actionHandler)
         sut.dispatch(ActionStub())
         XCTAssert(state == actionHandler.capturedState)
     }
@@ -27,7 +27,7 @@ class StoreTests: XCTestCase {
     func test_dispatch_actionHandlersCanModifyState() {
         let expected = StateStub(value: 19)
         let actionHandler = TestActionHandler(stateStub: expected, actionToDispatch: nil)
-        let sut = Store(state: StateStub(), actionHandler: actionHandler)
+        let sut = makeSUT(state: StateStub(), actionHandler: actionHandler)
         sut.dispatch(ActionStub())
         XCTAssert(sut.state == expected)
     }
@@ -35,7 +35,7 @@ class StoreTests: XCTestCase {
     func test_dispatch_actionHandlersCanDispatchNewActions() {
         let secondAction = ActionStub()
         let actionHandler = TestActionHandler(stateStub: .init(), actionToDispatch: secondAction)
-        let sut = Store(state: StateStub(), actionHandler: actionHandler)
+        let sut = makeSUT(actionHandler: actionHandler)
         let firstAction = ActionStub()
         sut.dispatch(firstAction)
         XCTAssert(actionHandler.capturedActions.count == 2)
@@ -45,13 +45,18 @@ class StoreTests: XCTestCase {
             XCTAssert($0 === $1)
         }
     }
+    
+    // MARK: - Helpers
+    private func makeSUT(state: StateStub = StateStub(), actionHandler: TestActionHandler = TestActionHandler()) -> Store<TestActionHandler> {
+        return Store(state: state, actionHandler: actionHandler)
+    }
 }
 
-struct StateStub: Equatable {
+private struct StateStub: Equatable {
     var value: Int = 0
 }
 
-class TestActionHandler: ActionHandler {
+private class TestActionHandler: ActionHandler {
         
     let stateStub: StateStub
     var actionToDispatch: ActionStub?
@@ -76,4 +81,4 @@ class TestActionHandler: ActionHandler {
     }
 }
 
-class ActionStub: Action {}
+private class ActionStub: Action {}
