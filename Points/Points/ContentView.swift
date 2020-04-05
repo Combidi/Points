@@ -1,7 +1,4 @@
 //
-//  ContentView.swift
-//  Points
-//
 //  Created by Peter Combee on 05/04/2020.
 //  Copyright © 2020 Combidi. All rights reserved.
 //
