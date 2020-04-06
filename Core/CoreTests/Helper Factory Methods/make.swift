@@ -6,4 +6,4 @@
 @testable import Core
 
 func makeGame() -> Game { Game()}
-func makeAppState() -> AppState { AppState(games: [makeGame(), makeGame()]) }
+func makeAppState(games: [Game] = [makeGame(), makeGame()]) -> AppState { AppState(games: games) }

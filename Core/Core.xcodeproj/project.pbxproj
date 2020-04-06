@@ -29,6 +29,10 @@
 		A6C9AABF243A93000065C0B5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AABD243A93000065C0B5 /* Game.swift */; };
 		A6C9AAC1243A93220065C0B5 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC0243A93220065C0B5 /* AppStore.swift */; };
 		A6C9AAC2243A93220065C0B5 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC0243A93220065C0B5 /* AppStore.swift */; };
+		A6C9AAC6243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */; };
+		A6C9AAC7243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */; };
+		A6C9AAC9243A94140065C0B5 /* GameActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */; };
+		A6C9AACA243A94140065C0B5 /* GameActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */; };
 		A6D21450243A209900C4371D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D21446243A209900C4371D /* Core.framework */; };
 		A6D21455243A209900C4371D /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D21454243A209900C4371D /* StoreTests.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +67,8 @@
 		A6C9AAB7243A912B0065C0B5 /* makeAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeAppStore.swift; sourceTree = "<group>"; };
 		A6C9AABD243A93000065C0B5 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A6C9AAC0243A93220065C0B5 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActionHandlerTest.swift; sourceTree = "<group>"; };
+		A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameActionHandler.swift; sourceTree = "<group>"; };
 		A6D21446243A209900C4371D /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D2144A243A209900C4371D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6D2144F243A209900C4371D /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +143,22 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		A6C9AAC3243A93860065C0B5 /* App Action Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */,
+			);
+			path = "App Action Handlers";
+			sourceTree = "<group>";
+		};
+		A6C9AAC4243A93B20065C0B5 /* App Action Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */,
+			);
+			path = "App Action Handlers";
+			sourceTree = "<group>";
+		};
 		A6D2143C243A209900C4371D = {
 			isa = PBXGroup;
 			children = (
@@ -160,12 +182,13 @@
 		A6D21448243A209900C4371D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A6C9AAB7243A912B0065C0B5 /* makeAppStore.swift */,
 				A6C9AABC243A92F60065C0B5 /* Models */,
 				A6C9AAA9243A85B90065C0B5 /* View Models */,
-				A6D2144A243A209900C4371D /* Info.plist */,
 				A60AF800243A20CD00FD6E18 /* Store.swift */,
 				A6945258243A24A60016EF94 /* ComposableAppActionHandler.swift */,
-				A6C9AAB7243A912B0065C0B5 /* makeAppStore.swift */,
+				A6C9AAC3243A93860065C0B5 /* App Action Handlers */,
+				A6D2144A243A209900C4371D /* Info.plist */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -173,12 +196,13 @@
 		A6D21453243A209900C4371D /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				A6C9AAB0243A8D0F0065C0B5 /* Helper Factory Methods */,
+				A6C9AAB4243A90B60065C0B5 /* makeAppStoreTest.swift */,
 				A6C9AAA8243A85A80065C0B5 /* View Models */,
-				A6D21456243A209900C4371D /* Info.plist */,
 				A6D21454243A209900C4371D /* StoreTests.swift */,
 				A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */,
-				A6C9AAB4243A90B60065C0B5 /* makeAppStoreTest.swift */,
+				A6C9AAC4243A93B20065C0B5 /* App Action Handlers */,
+				A6C9AAB0243A8D0F0065C0B5 /* Helper Factory Methods */,
+				A6D21456243A209900C4371D /* Info.plist */,
 			);
 			path = CoreTests;
 			sourceTree = "<group>";
@@ -361,6 +385,7 @@
 				A6C9AABF243A93000065C0B5 /* Game.swift in Sources */,
 				A6C9AAB9243A912B0065C0B5 /* makeAppStore.swift in Sources */,
 				A6C9AAC2243A93220065C0B5 /* AppStore.swift in Sources */,
+				A6C9AACA243A94140065C0B5 /* GameActionHandler.swift in Sources */,
 				A694524E243A22F00016EF94 /* Store.swift in Sources */,
 				A6C9AAAF243A86050065C0B5 /* GameListViewModel.swift in Sources */,
 			);
@@ -372,6 +397,7 @@
 			files = (
 				A6C9AAAC243A85CD0065C0B5 /* GameListViewModelTest.swift in Sources */,
 				A6C9AAB6243A90B60065C0B5 /* makeAppStoreTest.swift in Sources */,
+				A6C9AAC7243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */,
 				A6945257243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */,
 				A694524D243A22D50016EF94 /* StoreTests.swift in Sources */,
 				A6C9AAB3243A8D2C0065C0B5 /* make.swift in Sources */,
@@ -386,6 +412,7 @@
 				A6C9AABE243A93000065C0B5 /* Game.swift in Sources */,
 				A6C9AAB8243A912B0065C0B5 /* makeAppStore.swift in Sources */,
 				A6C9AAC1243A93220065C0B5 /* AppStore.swift in Sources */,
+				A6C9AAC9243A94140065C0B5 /* GameActionHandler.swift in Sources */,
 				A60AF801243A20CD00FD6E18 /* Store.swift in Sources */,
 				A6C9AAAE243A86050065C0B5 /* GameListViewModel.swift in Sources */,
 			);
@@ -397,6 +424,7 @@
 			files = (
 				A6C9AAAB243A85CD0065C0B5 /* GameListViewModelTest.swift in Sources */,
 				A6C9AAB5243A90B60065C0B5 /* makeAppStoreTest.swift in Sources */,
+				A6C9AAC6243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */,
 				A6945256243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */,
 				A6D21455243A209900C4371D /* StoreTests.swift in Sources */,
 				A6C9AAB2243A8D2C0065C0B5 /* make.swift in Sources */,

@@ -10,6 +10,7 @@ class MakeAppStoreTest: XCTestCase {
     
     func test_installsRightActionHandlers() {
         let sut = makeAppStore()
-        XCTAssertTrue(sut.actionHandler.handlers.isEmpty)
+        XCTAssertEqual(sut.actionHandler.handlers.count, 1)
+        XCTAssertTrue(sut.actionHandler.handlers.first is GameActionHandler)
     }
 }
