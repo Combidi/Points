@@ -18,7 +18,7 @@
 		A69DCD542439E94300556E59 /* PointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DCD532439E94300556E59 /* PointsTests.swift */; };
 		A69DCD5F2439E94300556E59 /* PointsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DCD5E2439E94300556E59 /* PointsUITests.swift */; };
 		A6C9AAA2243A84490065C0B5 /* GameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAA1243A84490065C0B5 /* GameList.swift */; };
-		A6C9AABB243A925D0065C0B5 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AABA243A925D0065C0B5 /* AppStore.swift */; };
+		A6C9AABB243A925D0065C0B5 /* appStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AABA243A925D0065C0B5 /* appStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 		A69DCD5E2439E94300556E59 /* PointsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsUITests.swift; sourceTree = "<group>"; };
 		A69DCD602439E94300556E59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6C9AAA1243A84490065C0B5 /* GameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameList.swift; sourceTree = "<group>"; };
-		A6C9AABA243A925D0065C0B5 /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		A6C9AABA243A925D0065C0B5 /* appStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 				A69DCD472439E94300556E59 /* LaunchScreen.storyboard */,
 				A69DCD4A2439E94300556E59 /* Info.plist */,
 				A69DCD442439E94300556E59 /* Preview Content */,
-				A6C9AABA243A925D0065C0B5 /* AppStore.swift */,
+				A6C9AABA243A925D0065C0B5 /* appStore.swift */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A69DCD3D2439E94200556E59 /* AppDelegate.swift in Sources */,
-				A6C9AABB243A925D0065C0B5 /* AppStore.swift in Sources */,
+				A6C9AABB243A925D0065C0B5 /* appStore.swift in Sources */,
 				A69DCD3F2439E94200556E59 /* SceneDelegate.swift in Sources */,
 				A69DCD412439E94200556E59 /* ContentView.swift in Sources */,
 				A6C9AAA2243A84490065C0B5 /* GameList.swift in Sources */,

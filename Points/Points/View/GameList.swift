@@ -8,14 +8,24 @@ import Core
 
 struct GameList: View {
         
-    let model = GameListViewModel(store: appStore)
+    @ObservedObject var model = GameListViewModel(store: appStore)
+    
+    @State private var editMode = EditMode.inactive
     
     var body: some View {
         NavigationView {
-            List(model.games) { game in
-                Text("game")
+            List {
+                ForEach(model.games) { game in
+                    Text("game")
+                }
+                .onDelete(perform: model.deleteGames(in:))
             }
             .navigationBarTitle("Games")
+            .environment(\.editMode, $editMode)
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: Button(action: self.model.addGame) { Text("New game") }
+            )
         }
     }
 }

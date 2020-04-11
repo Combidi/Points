@@ -13,7 +13,7 @@ class GameListViewModelTest: XCTestCase {
     
     func test_updatingGames() {
         
-        let store = makeStore()
+        let store = StoreSpy()
         let sut = GameListViewModel(store: store)
         
         var capturedGames: [Game] = []
@@ -29,10 +29,45 @@ class GameListViewModelTest: XCTestCase {
     
         XCTAssertEqual(capturedGames, expectedGames)
     }
+    
+    func test_addGame_dispatchesRightAction() {
+        
+        let store = StoreSpy()
+        let sut = GameListViewModel(store: store)
+    
+        sut.addGame()
+        XCTAssert(store.capturedAction is NewGameAction)
+    }
+    
+    func test_deleteGamesInIndexSet_dispatchesRightAction() {
+
+        let store = StoreSpy()
+        let sut = GameListViewModel(store: store)
+
+        let indexSet = IndexSet(integersIn: 1..<10)
+        sut.deleteGames(in: indexSet)
+        
+        let expected = DeleteGameAction(indexSet: indexSet)
+        
+        XCTAssert(store.capturedAction is DeleteGameAction)
+        XCTAssertEqual(
+            store.capturedAction as? DeleteGameAction,
+            expected
+        )
+    }
 }
 
-private func makeStore() -> Store<AppState, ComposableAppActionHandler> {
-    Store(state: makeAppState(), actionHandler: ComposableAppActionHandler(handlers: []))
+class StoreSpy: Store<AppState, ComposableAppActionHandler> {
+    
+    init() {
+        super.init(state: makeAppState(), actionHandler: ComposableAppActionHandler(handlers: []))
+    }
+    
+    var capturedAction: Action?
+    
+    override func dispatch(_ action: Action) {
+        capturedAction = action
+    }
 }
 
 private struct Handler: ActionHandler {

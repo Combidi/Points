@@ -4,8 +4,9 @@
 //
 
 import Combine
+import SwiftUI
 
-public class GameListViewModel {
+public class GameListViewModel: ObservableObject {
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -13,10 +14,19 @@ public class GameListViewModel {
     
     public init(store: AppStore) {
         self.store = store
+        addGame = {
+            store.dispatch(NewGameAction())
+        }
         store.$state
             .map(\.games)
             .assign(to: \.games, on: self)
             .store(in: &subscriptions)
+    }
+    
+    public let addGame: () -> Void
+    
+    public func deleteGames(in indexSet: IndexSet) {
+        store.dispatch(DeleteGameAction(indexSet: indexSet))
     }
     
     @Published public var games: [Game] = []
