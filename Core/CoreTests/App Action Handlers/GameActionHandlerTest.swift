@@ -6,9 +6,9 @@
 import XCTest
 @testable import Core
 
-class GameActionHandlerTest: XCTestCase {
-    
-    private var sut: GameActionHandler!
+class GameActionHandlerTest: XCTestCase, AppActionHandlerTestCase {
+        
+    var sut: GameActionHandler!
     
     override func setUp() {
         sut = GameActionHandler()
@@ -36,17 +36,7 @@ class GameActionHandlerTest: XCTestCase {
         var capturedState: AppState?
         handle(action, getState: { state }, setState: { capturedState = $0 })
         XCTAssertEqual(capturedState?.games, expectedGames)
-    }
-
-    // MARK: - Helpers
-    func handle(
-        _ action: Action,
-        getState: () -> AppState = { makeAppState() },
-        setState: @escaping (AppState) -> Void,
-        dispatch: @escaping (Action) -> Void = {_ in}
-    ) {
-        sut.handle(action, getState: getState, setState: setState, dispatch: dispatch)
-    }
+    }    
 }
 
 fileprivate struct WrongAction: Core.Action {}

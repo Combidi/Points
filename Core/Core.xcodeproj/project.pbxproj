@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A60AF801243A20CD00FD6E18 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60AF800243A20CD00FD6E18 /* Store.swift */; };
+		A64DB50924435C5600025068 /* PlayerActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DB50824435C5600025068 /* PlayerActionHandler.swift */; };
+		A64DB50A24435C5600025068 /* PlayerActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DB50824435C5600025068 /* PlayerActionHandler.swift */; };
+		A64DB50C24435C6C00025068 /* PlayerActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DB50B24435C6C00025068 /* PlayerActionHandlerTest.swift */; };
+		A64DB50D24435C6C00025068 /* PlayerActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DB50B24435C6C00025068 /* PlayerActionHandlerTest.swift */; };
+		A64DB50F24435DB700025068 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DB50E24435DB700025068 /* Player.swift */; };
+		A64DB51024435DB700025068 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64DB50E24435DB700025068 /* Player.swift */; };
+		A66B83242443653900677705 /* AppActionHandlerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B83232443653900677705 /* AppActionHandlerTestCase.swift */; };
+		A66B83252443653900677705 /* AppActionHandlerTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B83232443653900677705 /* AppActionHandlerTestCase.swift */; };
+		A66B83262443659100677705 /* GameActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */; };
+		A66B83272443659100677705 /* GameActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */; };
 		A694523F243A22640016EF94 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6945236243A22640016EF94 /* Core.framework */; };
 		A694524D243A22D50016EF94 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D21454243A209900C4371D /* StoreTests.swift */; };
 		A694524E243A22F00016EF94 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60AF800243A20CD00FD6E18 /* Store.swift */; };
@@ -29,8 +39,6 @@
 		A6C9AABF243A93000065C0B5 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AABD243A93000065C0B5 /* Game.swift */; };
 		A6C9AAC1243A93220065C0B5 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC0243A93220065C0B5 /* AppStore.swift */; };
 		A6C9AAC2243A93220065C0B5 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC0243A93220065C0B5 /* AppStore.swift */; };
-		A6C9AAC6243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */; };
-		A6C9AAC7243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */; };
 		A6C9AAC9243A94140065C0B5 /* GameActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */; };
 		A6C9AACA243A94140065C0B5 /* GameActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */; };
 		A6D21450243A209900C4371D /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D21446243A209900C4371D /* Core.framework */; };
@@ -58,6 +66,10 @@
 
 /* Begin PBXFileReference section */
 		A60AF800243A20CD00FD6E18 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		A64DB50824435C5600025068 /* PlayerActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionHandler.swift; sourceTree = "<group>"; };
+		A64DB50B24435C6C00025068 /* PlayerActionHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerActionHandlerTest.swift; sourceTree = "<group>"; };
+		A64DB50E24435DB700025068 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		A66B83232443653900677705 /* AppActionHandlerTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActionHandlerTestCase.swift; sourceTree = "<group>"; };
 		A6945236243A22640016EF94 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A694523E243A22640016EF94 /* Core_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Core_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableAppActionHandlerTest.swift; sourceTree = "<group>"; };
@@ -142,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				A6C9AABD243A93000065C0B5 /* Game.swift */,
+				A64DB50E24435DB700025068 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */,
+				A64DB50824435C5600025068 /* PlayerActionHandler.swift */,
 			);
 			path = "App Action Handlers";
 			sourceTree = "<group>";
@@ -157,7 +171,9 @@
 		A6C9AAC4243A93B20065C0B5 /* App Action Handlers */ = {
 			isa = PBXGroup;
 			children = (
+				A66B83232443653900677705 /* AppActionHandlerTestCase.swift */,
 				A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */,
+				A64DB50B24435C6C00025068 /* PlayerActionHandlerTest.swift */,
 			);
 			path = "App Action Handlers";
 			sourceTree = "<group>";
@@ -398,7 +414,9 @@
 				A6C9AAB9243A912B0065C0B5 /* makeAppStore.swift in Sources */,
 				A6C9AAC2243A93220065C0B5 /* AppStore.swift in Sources */,
 				A6C9AACA243A94140065C0B5 /* GameActionHandler.swift in Sources */,
+				A64DB50A24435C5600025068 /* PlayerActionHandler.swift in Sources */,
 				A694524E243A22F00016EF94 /* Store.swift in Sources */,
+				A64DB51024435DB700025068 /* Player.swift in Sources */,
 				A6C9AAAF243A86050065C0B5 /* GameListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,9 +426,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EFE99624422B70002D442E /* GameTest.swift in Sources */,
+				A64DB50D24435C6C00025068 /* PlayerActionHandlerTest.swift in Sources */,
 				A6C9AAAC243A85CD0065C0B5 /* GameListViewModelTest.swift in Sources */,
 				A6C9AAB6243A90B60065C0B5 /* makeAppStoreTest.swift in Sources */,
-				A6C9AAC7243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */,
+				A66B83252443653900677705 /* AppActionHandlerTestCase.swift in Sources */,
+				A66B83262443659100677705 /* GameActionHandlerTest.swift in Sources */,
 				A6945257243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */,
 				A694524D243A22D50016EF94 /* StoreTests.swift in Sources */,
 				A6C9AAB3243A8D2C0065C0B5 /* make.swift in Sources */,
@@ -426,7 +446,9 @@
 				A6C9AAB8243A912B0065C0B5 /* makeAppStore.swift in Sources */,
 				A6C9AAC1243A93220065C0B5 /* AppStore.swift in Sources */,
 				A6C9AAC9243A94140065C0B5 /* GameActionHandler.swift in Sources */,
+				A64DB50924435C5600025068 /* PlayerActionHandler.swift in Sources */,
 				A60AF801243A20CD00FD6E18 /* Store.swift in Sources */,
+				A64DB50F24435DB700025068 /* Player.swift in Sources */,
 				A6C9AAAE243A86050065C0B5 /* GameListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,9 +458,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EFE99524422B70002D442E /* GameTest.swift in Sources */,
+				A64DB50C24435C6C00025068 /* PlayerActionHandlerTest.swift in Sources */,
 				A6C9AAAB243A85CD0065C0B5 /* GameListViewModelTest.swift in Sources */,
 				A6C9AAB5243A90B60065C0B5 /* makeAppStoreTest.swift in Sources */,
-				A6C9AAC6243A93D50065C0B5 /* GameActionHandlerTest.swift in Sources */,
+				A66B83242443653900677705 /* AppActionHandlerTestCase.swift in Sources */,
+				A66B83272443659100677705 /* GameActionHandlerTest.swift in Sources */,
 				A6945256243A24800016EF94 /* ComposableAppActionHandlerTest.swift in Sources */,
 				A6D21455243A209900C4371D /* StoreTests.swift in Sources */,
 				A6C9AAB2243A8D2C0065C0B5 /* make.swift in Sources */,

@@ -4,5 +4,8 @@
 //
 
 public func makeAppStore() -> AppStore {
-    AppStore(state: AppState(), actionHandler: ComposableAppActionHandler(handlers: [GameActionHandler()]))
+    AppStore(
+        state: AppState(),
+        actionHandler: ComposableAppActionHandler(handlers: [GameActionHandler(), PlayerActionHandler()])
+    )
 }

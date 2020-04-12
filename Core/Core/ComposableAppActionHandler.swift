@@ -5,6 +5,7 @@
 
 public struct AppState: Equatable {
     var games: [Game] = []
+    var players: [Player] = []
 }
 
 protocol AppActionHandler {
