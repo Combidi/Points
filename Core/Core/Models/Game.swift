@@ -8,6 +8,20 @@ import Foundation
 public struct Game: Equatable, Identifiable {
     
     public let id = UUID()
+    public let entries: [Entry]
     
-    public init() {}
+    public init(entries: [Entry] = []) {
+        self.entries = entries
+    }
+    
+    public var players: [String] {
+        Array(Set(entries.map { $0.player }))
+    }
+}
+
+public struct Entry: Equatable {
+    
+    let player: String
+    let score: Int
+
 }
