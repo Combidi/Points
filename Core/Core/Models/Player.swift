@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct Player: Equatable, Identifiable, Hashable {
+public struct Player: Equatable, Identifiable, Hashable, Codable {
     
     public let name: String
 

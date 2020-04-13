@@ -3,9 +3,13 @@
 //  Copyright © 2020 Combidi. All rights reserved.
 //
 
-public func makeAppStore() -> AppStore {
+public func makeAppStore(storage: Storage) -> AppStore {
     AppStore(
         state: AppState(),
-        actionHandler: ComposableAppActionHandler(handlers: [GameActionHandler(), PlayerActionHandler()])
+        actionHandler: ComposableAppActionHandler(handlers: [
+            GameActionHandler(),
+            PlayerActionHandler(),
+            StorageActionHandler(storage: storage)
+        ])
     )
 }

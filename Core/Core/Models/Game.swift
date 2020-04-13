@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct Game: Equatable, Identifiable {
+public struct Game: Equatable, Identifiable, Codable {
     
     public let entries: [Entry]
     
@@ -20,7 +20,7 @@ public struct Game: Equatable, Identifiable {
     }
 }
 
-public struct Entry: Equatable {
+public struct Entry: Equatable, Codable {
     
     public let player: Player
     public let score: Int

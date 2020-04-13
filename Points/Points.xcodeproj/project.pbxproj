@@ -11,6 +11,7 @@
 		A66B833224445D7A00677705 /* GameDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFE98E24421AE5002D442E /* GameDetails.swift */; };
 		A66B83352444608700677705 /* Game+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B83342444608700677705 /* Game+.swift */; };
 		A66B8337244460AA00677705 /* Game+Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B8336244460AA00677705 /* Game+Test.swift */; };
+		A66B833F2444EBC400677705 /* JSONStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833E2444EBC400677705 /* JSONStorage.swift */; };
 		A6945251243A23A80016EF94 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6945250243A23A80016EF94 /* Core.framework */; };
 		A6945252243A23A80016EF94 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A6945250243A23A80016EF94 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A69DCD3D2439E94200556E59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69DCD3C2439E94200556E59 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		A64DB50624435C4600025068 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 		A66B83342444608700677705 /* Game+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+.swift"; sourceTree = "<group>"; };
 		A66B8336244460AA00677705 /* Game+Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+Test.swift"; sourceTree = "<group>"; };
+		A66B833E2444EBC400677705 /* JSONStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStorage.swift; sourceTree = "<group>"; };
 		A6945250243A23A80016EF94 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69DCD392439E94200556E59 /* Points.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Points.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A69DCD3C2439E94200556E59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				A69DCD4A2439E94300556E59 /* Info.plist */,
 				A69DCD442439E94300556E59 /* Preview Content */,
 				A6C9AABA243A925D0065C0B5 /* appStore.swift */,
+				A66B833E2444EBC400677705 /* JSONStorage.swift */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				A6EFE99224422A2F002D442E /* ScoreInputView.swift in Sources */,
 				A6C9AAA2243A84490065C0B5 /* GameList.swift in Sources */,
 				A66B83352444608700677705 /* Game+.swift in Sources */,
+				A66B833F2444EBC400677705 /* JSONStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

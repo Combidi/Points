@@ -24,8 +24,10 @@
 		A66B832D244368FF00677705 /* PlayerListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B832B244368FF00677705 /* PlayerListViewModelTest.swift */; };
 		A66B832F24436A0B00677705 /* StoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B832E24436A0B00677705 /* StoreSpy.swift */; };
 		A66B833024436A0B00677705 /* StoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B832E24436A0B00677705 /* StoreSpy.swift */; };
-		A66B833924446A8800677705 /* LoadingActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833824446A8800677705 /* LoadingActionHandler.swift */; };
-		A66B833A24446A8800677705 /* LoadingActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833824446A8800677705 /* LoadingActionHandler.swift */; };
+		A66B833924446A8800677705 /* StorageActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833824446A8800677705 /* StorageActionHandler.swift */; };
+		A66B833A24446A8800677705 /* StorageActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833824446A8800677705 /* StorageActionHandler.swift */; };
+		A66B833C24446AB100677705 /* StorageActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833B24446AB100677705 /* StorageActionHandlerTest.swift */; };
+		A66B833D24446AB100677705 /* StorageActionHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66B833B24446AB100677705 /* StorageActionHandlerTest.swift */; };
 		A694523F243A22640016EF94 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6945236243A22640016EF94 /* Core.framework */; };
 		A694524D243A22D50016EF94 /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D21454243A209900C4371D /* StoreTests.swift */; };
 		A694524E243A22F00016EF94 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60AF800243A20CD00FD6E18 /* Store.swift */; };
@@ -81,7 +83,8 @@
 		A66B8328244368D100677705 /* PlayerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModel.swift; sourceTree = "<group>"; };
 		A66B832B244368FF00677705 /* PlayerListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewModelTest.swift; sourceTree = "<group>"; };
 		A66B832E24436A0B00677705 /* StoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreSpy.swift; sourceTree = "<group>"; };
-		A66B833824446A8800677705 /* LoadingActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingActionHandler.swift; sourceTree = "<group>"; };
+		A66B833824446A8800677705 /* StorageActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageActionHandler.swift; sourceTree = "<group>"; };
+		A66B833B24446AB100677705 /* StorageActionHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageActionHandlerTest.swift; sourceTree = "<group>"; };
 		A6945236243A22640016EF94 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A694523E243A22640016EF94 /* Core_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Core_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6945255243A24800016EF94 /* ComposableAppActionHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableAppActionHandlerTest.swift; sourceTree = "<group>"; };
@@ -186,7 +189,7 @@
 			children = (
 				A6C9AAC8243A94140065C0B5 /* GameActionHandler.swift */,
 				A64DB50824435C5600025068 /* PlayerActionHandler.swift */,
-				A66B833824446A8800677705 /* LoadingActionHandler.swift */,
+				A66B833824446A8800677705 /* StorageActionHandler.swift */,
 			);
 			path = "App Action Handlers";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				A66B83232443653900677705 /* AppActionHandlerTestCase.swift */,
 				A6C9AAC5243A93D50065C0B5 /* GameActionHandlerTest.swift */,
 				A64DB50B24435C6C00025068 /* PlayerActionHandlerTest.swift */,
+				A66B833B24446AB100677705 /* StorageActionHandlerTest.swift */,
 			);
 			path = "App Action Handlers";
 			sourceTree = "<group>";
@@ -442,7 +446,7 @@
 				A694524E243A22F00016EF94 /* Store.swift in Sources */,
 				A64DB51024435DB700025068 /* Player.swift in Sources */,
 				A6C9AAAF243A86050065C0B5 /* GameListViewModel.swift in Sources */,
-				A66B833A24446A8800677705 /* LoadingActionHandler.swift in Sources */,
+				A66B833A24446A8800677705 /* StorageActionHandler.swift in Sources */,
 				A66B832A244368D100677705 /* PlayerListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +466,7 @@
 				A66B832D244368FF00677705 /* PlayerListViewModelTest.swift in Sources */,
 				A694524D243A22D50016EF94 /* StoreTests.swift in Sources */,
 				A6C9AAB3243A8D2C0065C0B5 /* make.swift in Sources */,
+				A66B833D24446AB100677705 /* StorageActionHandlerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +483,7 @@
 				A60AF801243A20CD00FD6E18 /* Store.swift in Sources */,
 				A64DB50F24435DB700025068 /* Player.swift in Sources */,
 				A6C9AAAE243A86050065C0B5 /* GameListViewModel.swift in Sources */,
-				A66B833924446A8800677705 /* LoadingActionHandler.swift in Sources */,
+				A66B833924446A8800677705 /* StorageActionHandler.swift in Sources */,
 				A66B8329244368D100677705 /* PlayerListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +503,7 @@
 				A66B832C244368FF00677705 /* PlayerListViewModelTest.swift in Sources */,
 				A6D21455243A209900C4371D /* StoreTests.swift in Sources */,
 				A6C9AAB2243A8D2C0065C0B5 /* make.swift in Sources */,
+				A66B833C24446AB100677705 /* StorageActionHandlerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

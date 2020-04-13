@@ -9,9 +9,16 @@ import XCTest
 class MakeAppStoreTest: XCTestCase {
     
     func test_installsRightActionHandlers() {
-        let sut = makeAppStore()
-        XCTAssertEqual(sut.actionHandler.handlers.count, 2)
+        let storage = Storage()
+        let sut = makeAppStore(storage: storage)
+        XCTAssertEqual(sut.actionHandler.handlers.count, 3)
         XCTAssertTrue(sut.actionHandler.handlers.contains(where: { $0 is GameActionHandler }))
         XCTAssertTrue(sut.actionHandler.handlers.contains(where: { $0 is PlayerActionHandler }))
+        XCTAssertTrue(sut.actionHandler.handlers.contains(where: { $0 is StorageActionHandler }))
     }
+}
+
+private struct Storage: Core.Storage {
+    func loadAppState() -> AppState { fatalError() }
+    func store(appState: AppState) { fatalError() }
 }

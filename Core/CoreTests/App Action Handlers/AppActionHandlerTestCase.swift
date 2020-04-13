@@ -14,7 +14,7 @@ extension AppActionHandlerTestCase {
     func handle(
         _ action: Action,
         getState: () -> AppState = { makeAppState() },
-        setState: @escaping (AppState) -> Void,
+        setState: @escaping (AppState) -> Void = {_ in},
         dispatch: @escaping (Action) -> Void = {_ in}
     ) {
         sut.handle(action, getState: getState, setState: setState, dispatch: dispatch)

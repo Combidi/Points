@@ -3,7 +3,7 @@
 //  Copyright © 2020 Combidi. All rights reserved.
 //
 
-public struct AppState: Equatable {
+public struct AppState: Equatable, Codable {
     var games: [Game] = []
     var players: [Player] = []
 }
