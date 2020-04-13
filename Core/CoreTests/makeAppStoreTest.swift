@@ -20,5 +20,5 @@ class MakeAppStoreTest: XCTestCase {
 
 private struct Storage: Core.Storage {
     func loadAppState() -> AppState { fatalError() }
-    func store(appState: AppState) { fatalError() }
+    func save(appState: AppState) { fatalError() }
 }

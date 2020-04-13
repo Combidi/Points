@@ -4,6 +4,9 @@
 //
 
 public struct AppState: Equatable, Codable {
+    
+    public static func empty() -> AppState { .init() }
+    
     var games: [Game] = []
     var players: [Player] = []
 }

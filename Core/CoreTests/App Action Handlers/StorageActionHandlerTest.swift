@@ -27,7 +27,7 @@ class StorageActionHandlerTest: XCTestCase, AppActionHandlerTestCase {
         let action = SaveAction()
         let expectedState = makeAppState()
         handle(action, getState: { expectedState })
-        XCTAssertEqual(storage.storedAppState, expectedState)
+        XCTAssertEqual(storage.savedAppState, expectedState)
     }
     
     func test_handleAction_whereActionIsSaveAction_doesNotLoadAppState() {
@@ -44,7 +44,7 @@ class StorageActionHandlerTest: XCTestCase, AppActionHandlerTestCase {
         let storage = Storage()
         sut = StorageActionHandler(storage: storage)
         handle(LoadAction())
-        XCTAssertNil(storage.storedAppState)
+        XCTAssertNil(storage.savedAppState)
     }
     
     func test_handleAction_whereActionIsOfWrongType_doesNotLoadNorSaveAppState() {
@@ -52,7 +52,7 @@ class StorageActionHandlerTest: XCTestCase, AppActionHandlerTestCase {
         sut = StorageActionHandler(storage: storage)
         var capturedState: AppState?
         handle(Action(), setState: { capturedState = $0 })
-        XCTAssertNil(storage.storedAppState)
+        XCTAssertNil(storage.savedAppState)
         XCTAssertNil(capturedState)
     }
 }
@@ -65,9 +65,9 @@ private class Storage: Core.Storage {
     
     func loadAppState() -> AppState { stub }
     
-    var storedAppState: AppState?
+    var savedAppState: AppState?
     
-    func store(appState: AppState) {
-        storedAppState = appState
+    func save(appState: AppState) {
+        savedAppState = appState
     }
 }

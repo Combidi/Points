@@ -7,11 +7,16 @@ import Foundation
 
 public protocol Storage {
     func loadAppState() -> AppState
-    func store(appState: AppState)
+    func save(appState: AppState)
 }
 
-struct LoadAction: Action {}
-struct SaveAction: Action {}
+public struct LoadAction: Action {
+    public init() {}
+}
+
+public struct SaveAction: Action {
+    public init() {}
+}
 
 struct StorageActionHandler: AppActionHandler {
     
@@ -20,7 +25,7 @@ struct StorageActionHandler: AppActionHandler {
     func handle(_ action: Action, getState: () -> AppState, setState: @escaping (AppState) -> Void, dispatch: @escaping (Action) -> Void) {
         switch action {
         case _ as SaveAction:
-            storage.store(appState: getState())
+            storage.save(appState: getState())
         case _ as LoadAction:
             setState(storage.loadAppState())
         default:

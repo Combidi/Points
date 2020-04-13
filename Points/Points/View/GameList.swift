@@ -26,10 +26,12 @@ struct GameList: View {
             trailing: Button(action: { self.playerSelectionPresented = true }) { Text("New game") }
         )
         .sheet(isPresented: $playerSelectionPresented) {
-            PlayerList()
-                .navigationBarItems(
-                    trailing: Button(action: self.model.addGame) { Text("Save") }
+            NavigationView {
+                PlayerList()
+                    .navigationBarItems(
+                        trailing: Button(action: self.model.addGame) { Text("Save") }
                 )
+            }
         }
     }
 }

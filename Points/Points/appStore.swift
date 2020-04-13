@@ -5,4 +5,4 @@
 
 import Core
 
-let appStore = makeAppStore()
+let appStore = makeAppStore(storage: JSONStorage())
