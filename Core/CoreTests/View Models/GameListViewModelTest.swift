@@ -9,12 +9,17 @@ import Combine
 
 class GameListViewModelTest: XCTestCase {
     
+    private var store: StoreSpy!
+    private var sut: GameListViewModel!
+    
+    override func setUp() {
+        store = StoreSpy()
+        sut = GameListViewModel(store: store)
+    }
+    
     private var subscriptions = Set<AnyCancellable>()
     
     func test_updatingGames() {
-        
-        let store = StoreSpy()
-        let sut = GameListViewModel(store: store)
         
         var capturedGames: [Game] = []
         sut.$games
@@ -23,7 +28,7 @@ class GameListViewModelTest: XCTestCase {
             })
             .store(in: &subscriptions)
         
-        let expectedGames = [Game(), Game()]
+        let expectedGames = [makeGame(), makeGame()]
         let state = AppState(games: expectedGames)
         store.set(state: state)
     
@@ -31,18 +36,13 @@ class GameListViewModelTest: XCTestCase {
     }
     
     func test_addGame_dispatchesRightAction() {
-        
-        let store = StoreSpy()
-        let sut = GameListViewModel(store: store)
-    
+            
         sut.addGame()
+        
         XCTAssert(store.capturedAction is NewGameAction)
     }
     
     func test_deleteGamesInIndexSet_dispatchesRightAction() {
-
-        let store = StoreSpy()
-        let sut = GameListViewModel(store: store)
 
         let indexSet = IndexSet(integersIn: 1..<10)
         sut.deleteGames(in: indexSet)
@@ -54,23 +54,5 @@ class GameListViewModelTest: XCTestCase {
             store.capturedAction as? DeleteGameAction,
             expected
         )
-    }
-}
-
-class StoreSpy: Store<AppState, ComposableAppActionHandler> {
-    
-    init() {
-        super.init(state: makeAppState(), actionHandler: ComposableAppActionHandler(handlers: []))
-    }
-    
-    var capturedAction: Action?
-    
-    override func dispatch(_ action: Action) {
-        capturedAction = action
-    }
-}
-
-private struct Handler: ActionHandler {
-    func handle(_ action: Action, getState: () -> AppState, setState: @escaping (AppState) -> Void, dispatch: @escaping (Action) -> Void) {
     }
 }

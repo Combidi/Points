@@ -4,7 +4,7 @@
 //
 
 import Combine
-import SwiftUI
+import Foundation
 
 public class GameListViewModel: ObservableObject {
     
