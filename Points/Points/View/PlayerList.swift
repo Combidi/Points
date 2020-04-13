@@ -4,10 +4,17 @@
 //
 
 import SwiftUI
+import Core
 
 struct PlayerList: View {
+    
+    @ObservedObject var model = PlayerListViewModel(store: appStore)
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(model.players) { player in
+            Text(player.name)
+        }
+        .navigationBarTitle("Players")
     }
 }
 

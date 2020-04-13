@@ -5,6 +5,7 @@
 
 
 import Foundation
+import SwiftUI
 
 struct NewGameAction: Action {}
 struct DeleteGameAction: Action, Equatable {

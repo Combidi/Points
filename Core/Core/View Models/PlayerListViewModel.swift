@@ -5,7 +5,7 @@
 
 import Combine
 
-class PlayerListViewModel {
+public class PlayerListViewModel: ObservableObject {
     
     private var subscriptions = Set<AnyCancellable>()
     

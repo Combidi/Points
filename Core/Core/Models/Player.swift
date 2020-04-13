@@ -3,6 +3,15 @@
 //  Copyright © 2020 Combidi. All rights reserved.
 //
 
-struct Player: Equatable {
-    let name: String
+import Foundation
+
+public struct Player: Equatable, Identifiable, Hashable {
+    
+    public let name: String
+
+    public init(name: String) {
+        self.name = name
+    }
+    
+    public let id = UUID()
 }

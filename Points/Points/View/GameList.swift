@@ -8,28 +8,36 @@ import Core
 
 struct GameList: View {
         
-    @ObservedObject var model = GameListViewModel(store: appStore)
+    @ObservedObject private var model = GameListViewModel(store: appStore)
         
+    @State private var playerSelectionPresented = false
+    
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(model.games) { game in
-                    NavigationLink(destination: GameDetails(game: game)) {
-                        Text("Game")
-                    }
+        List {
+            ForEach(model.games) { game in
+                NavigationLink(destination: GameDetails(game: game)) {
+                    Text("Game")
                 }
-                .onDelete(perform: model.deleteGames(in:))
             }
-            .navigationBarTitle("Games")
-            .navigationBarItems(
-                trailing: Button(action: self.model.addGame) { Text("New game") }
-            )
+            .onDelete(perform: model.deleteGames(in:))
+        }
+        .navigationBarTitle("Games")
+        .navigationBarItems(
+            trailing: Button(action: { self.playerSelectionPresented = true }) { Text("New game") }
+        )
+        .sheet(isPresented: $playerSelectionPresented) {
+            PlayerList()
+                .navigationBarItems(
+                    trailing: Button(action: self.model.addGame) { Text("Save") }
+                )
         }
     }
 }
 
 struct GameList_Previews: PreviewProvider {
     static var previews: some View {
-        GameList()
+        NavigationView {
+            GameList()
+        }
     }
 }

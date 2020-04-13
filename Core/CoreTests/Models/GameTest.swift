@@ -9,16 +9,21 @@ import XCTest
 class GameTest: XCTestCase {
     
     func test_players() {
+        let anke = Player(name: "Anke")
+        let peter = Player(name: "Peter")
+        let stoffers = Player(name: "Stoffers")
         let entries = [
-            Entry(player: "Stoffers", score: 100),
-            Entry(player: "Anke", score: 100),
-            Entry(player: "Peter", score: 100),
-            Entry(player: "Stoffers", score: 100),
-            Entry(player: "Anke", score: 100),
-            Entry(player: "Peter", score: 100)
+            Entry(player: stoffers, score: 100),
+            Entry(player: anke, score: 100),
+            Entry(player: peter, score: 100),
+            Entry(player: stoffers, score: 100),
+            Entry(player: anke, score: 100),
+            Entry(player: peter, score: 100)
         ]
         let sut = Game(entries: entries)
-        
-        
+        XCTAssertEqual(sut.players.count, 3)
+        XCTAssertTrue(sut.players.contains(stoffers))
+        XCTAssertTrue(sut.players.contains(anke))
+        XCTAssertTrue(sut.players.contains(peter))
     }
 }

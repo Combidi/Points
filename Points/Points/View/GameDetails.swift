@@ -14,7 +14,7 @@ struct GameDetails: View {
         VStack {
             ScrollView {
                 HStack(spacing: 0) {
-                    ForEach(self.game.players) { player in
+                    ForEach(game.sortedPlayers) { player in
                         ZStack {
                             Color.clear
                             Text(player.name)
@@ -37,10 +37,10 @@ struct GameDetails: View {
 struct GameDetails_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            GameDetails(game: Game(players: [
-                Player(name: "Peter"),
-                Player(name: "Anke"),
-                Player(name: "Stoffers")
+            GameDetails(game: .init(entries: [
+                .init(player: .init(name: "Peter"), score: 30),
+                .init(player: .init(name: "Anke"), score: 10),
+                .init(player: .init(name: "Stoffers"), score: 40)
             ]))
         }
     }
