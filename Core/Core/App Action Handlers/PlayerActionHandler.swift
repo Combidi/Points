@@ -3,7 +3,7 @@
 //  Copyright © 2020 Combidi. All rights reserved.
 //
 
-struct AddPlayerAction: Action {
+struct AddPlayerAction: Action, Equatable {
     let name: String
 }
 

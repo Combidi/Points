@@ -5,7 +5,7 @@
 
 @testable import Core
 
-func makeGame() -> Game { Game() }
+func makeGame() -> Game { Game(entries: [], players: []) }
 func makePlayer() -> Player { Player(name: .random()) }
 func makeAppState(
     games: [Game] = .init(repeating: makeGame(), count: 2),

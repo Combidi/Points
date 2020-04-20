@@ -8,16 +8,14 @@ import Foundation
 public struct Game: Equatable, Identifiable, Codable {
     
     public let entries: [Entry]
+    public let players: Set<Player>
     
-    public init(entries: [Entry] = []) {
+    public init(entries: [Entry] = [], players: Set<Player>) {
         self.entries = entries
+        self.players = players
     }
 
-    public let id = UUID()
-    
-    public var players: Set<Player> {
-        Set(entries.map { $0.player })
-    }
+    public let id = UUID()    
 }
 
 public struct Entry: Equatable, Codable {

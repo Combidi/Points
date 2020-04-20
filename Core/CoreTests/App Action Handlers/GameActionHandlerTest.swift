@@ -15,11 +15,17 @@ class GameActionHandlerTest: XCTestCase, AppActionHandlerTestCase {
     }
     
     func test_handleAction_NewGameAction_addsNewGame() {
-        let action = NewGameAction()
+        let expectedPlayers: Set<Player> = [
+            makePlayer(),
+            makePlayer()
+        ]
+        let action = NewGameAction(for: expectedPlayers)
         let state = makeAppState(games: [makeGame()])
         var capturedState: AppState?
         handle(action, getState: { state }, setState: { capturedState = $0 })
         XCTAssertEqual(capturedState?.games.count, 2)
+        XCTAssertEqual(capturedState?.games.last?.players, expectedPlayers)
+        XCTAssertTrue(capturedState?.games.last?.entries.isEmpty ?? false)
     }
     
     func test_handleAction_whereActionIsOfWrongType_doesNotAddNewGame() {

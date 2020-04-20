@@ -22,12 +22,7 @@ struct GameDetails: View {
                     }
                 }
             }
-            Button(action: {}) {
-                Text("End game")
-                    .font(.title)
-                    .foregroundColor(.red)
-                    .padding(.bottom, 20)
-            }
+            ColorButton(title: "End game", action: {}, color: .red)
         }
         .navigationBarTitle(game.id.uuidString)
         .navigationBarItems(trailing: Button(action: {}) { Text("New Entry") })
@@ -36,12 +31,22 @@ struct GameDetails: View {
 
 struct GameDetails_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            GameDetails(game: .init(entries: [
-                .init(player: .init(name: "Peter"), score: 30),
-                .init(player: .init(name: "Anke"), score: 10),
-                .init(player: .init(name: "Stoffers"), score: 40)
-            ]))
+        
+        let players = [
+            Player(name: "Peter"),
+            Player(name: "Anke"),
+            Player(name: "Stoffers")
+        ]
+        
+        return NavigationView {
+            GameDetails(game: .init(
+                entries: [
+                    .init(player: players[0], score: 30),
+                    .init(player: players[1], score: 10),
+                    .init(player: players[2], score: 40)
+                ],
+                players: Set(players)
+            ))
         }
     }
 }
