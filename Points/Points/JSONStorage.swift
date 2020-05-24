@@ -8,12 +8,16 @@ import Foundation
 
 struct JSONStorage: Storage {
     
-    func loadAppState() -> AppState {
-        
+    private var fileUrl: URL? {
         guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            fatalError()
+            return nil
         }
-        let fileUrl = dirUrl.appendingPathComponent("state.json")
+        return dirUrl.appendingPathComponent("state.json")
+    }
+    
+    func loadAppState() -> AppState {
+
+        guard let fileUrl = fileUrl else { return .empty() }
         
         do {
             let data = try Data(contentsOf: fileUrl)
@@ -26,10 +30,8 @@ struct JSONStorage: Storage {
     }
     
     func save(appState: AppState) {
-        guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            return
-        }
-        let fileUrl = dirUrl.appendingPathComponent("state.json")
+        
+        guard let fileUrl = fileUrl else { return }
         
         do {
             let data = try JSONEncoder().encode(appState)
