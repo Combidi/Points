@@ -18,14 +18,7 @@ struct PlayerSelectionView: View {
             VStack {
                 List(model.players) { player in
                     ZStack {
-                        HStack {
-                            Text(player.name)
-                            Spacer()
-                            if self.selectedPlayers.contains(player) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.green)
-                            }
-                        }
+                        
                         Button(action: {
                             if self.selectedPlayers.contains(player) {
                                 self.selectedPlayers.remove(player)
@@ -33,7 +26,14 @@ struct PlayerSelectionView: View {
                                 self.selectedPlayers.insert(player)
                             }
                         }) {
-                            Color.clear
+                            HStack {
+                                Text(player.name)
+                                Spacer()
+                                if self.selectedPlayers.contains(player) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.green)
+                                }
+                            }
                         }
                     }
                 }

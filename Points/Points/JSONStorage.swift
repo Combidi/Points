@@ -4,29 +4,38 @@
 //
 
 import Core
+import Foundation
 
 struct JSONStorage: Storage {
-
-    private let path = Bundle.main.path(forResource: "state", ofType: "json")!
-
-    func loadAppState() -> AppState {        
-        let attributes = try! FileManager.default.attributesOfItem(atPath: path)
-        if attributes[.size] as! UInt == 0 {
-            return AppState.empty()
-        } else {
-            let data = try! Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            let appState = try! JSONDecoder().decode(AppState.self, from: data)
+    
+    func loadAppState() -> AppState {
+        
+        guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            fatalError()
+        }
+        let fileUrl = dirUrl.appendingPathComponent("state.json")
+        
+        do {
+            let data = try Data(contentsOf: fileUrl)
+            let appState = try JSONDecoder().decode(AppState.self, from: data)
             return appState
+        } catch {
+            print(error)
+            return .empty()
         }
     }
     
     func save(appState: AppState) {
-        let json = try! JSONEncoder().encode(appState)
-        let fileHandler = FileHandle(forWritingAtPath: path)!
-        fileHandler.write(json)
-        fileHandler.closeFile()
+        guard let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            return
+        }
+        let fileUrl = dirUrl.appendingPathComponent("state.json")
+        
+        do {
+            let data = try JSONEncoder().encode(appState)
+            try data.write(to: fileUrl)
+        } catch {
+            print(error)
+        }
     }
 }
-
-import Foundation
-
