@@ -20,9 +20,7 @@ struct JSONStorage: Storage {
         guard let fileUrl = fileUrl else { return .empty() }
         
         do {
-            let data = try Data(contentsOf: fileUrl)
-            let appState = try JSONDecoder().decode(AppState.self, from: data)
-            return appState
+            return try JSONDecoder().decode(AppState.self, from: .init(contentsOf: fileUrl))
         } catch {
             print(error)
             return .empty()
@@ -34,8 +32,7 @@ struct JSONStorage: Storage {
         guard let fileUrl = fileUrl else { return }
         
         do {
-            let data = try JSONEncoder().encode(appState)
-            try data.write(to: fileUrl)
+            try JSONEncoder().encode(appState).write(to: fileUrl)
         } catch {
             print(error)
         }
